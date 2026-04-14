@@ -1,27 +1,32 @@
 import { useEffect } from "react";
 
-export default function Cursor() {
-
+export default function SmokeCursor() {
   useEffect(() => {
-    const trail = [];
+    const particles = [];
 
-    // create dots
-    for (let i = 0; i < 12; i++) {
-      const dot = document.createElement("div");
-      dot.className = "trail-dot";
-      document.body.appendChild(dot);
-      trail.push(dot);
-    }
+    const createParticle = (x, y) => {
+      const el = document.createElement("div");
+      el.className = "smoke";
 
-    window.addEventListener("mousemove", (e) => {
-      trail.forEach((dot, i) => {
-        setTimeout(() => {
-          dot.style.left = e.clientX + "px";
-          dot.style.top = e.clientY + "px";
-        }, i * 25);
-      });
-    });
+      el.style.left = x + "px";
+      el.style.top = y + "px";
 
+      document.body.appendChild(el);
+
+      particles.push(el);
+
+      setTimeout(() => {
+        el.remove();
+      }, 600);
+    };
+
+    const handleMove = (e) => {
+      createParticle(e.clientX, e.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMove);
+
+    return () => window.removeEventListener("mousemove", handleMove);
   }, []);
 
   return null;

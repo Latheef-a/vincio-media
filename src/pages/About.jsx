@@ -1,4 +1,5 @@
 import aboutImg from "../assets/about.jpg"; 
+import aboutImg1 from "../assets/about2.avif";
 
 export default function About() {
   return (
@@ -6,13 +7,13 @@ export default function About() {
 
       {/* HERO */}
       <div className="about-hero glass">
-        <h1>About Vincio Marketing</h1>
+        <h1>About Vincio Media House</h1>
         <p>
           We connect brands and people through powerful digital storytelling.
         </p>
       </div>
 
-      {/* CONTENT */}
+      {/* CARD 1 */}
       <div className="about-container glass">
 
         {/* LEFT */}
@@ -20,17 +21,13 @@ export default function About() {
           <h2>Who We Are</h2>
 
           <p>
-            With over <span className="highlight"> five years of expertise</span> in the ever-evolving digital marketing landscape,
-            Vincio Marketing is your trusted partner for achieving exceptional online success.
-            Our skilled team blends passion with innovation, leveraging cutting-edge AI technologies
-            and the latest industry trends to deliver tailored, data-driven strategies that resonate
-            with your audience and yield measurable results.
+            Vincio Media House is a <span className="highlight">multi-disciplinary agency</span> where high-level digital strategy 
+            meets professional event execution — all under one roof.
           </p>
 
           <p>
-            Our comprehensive services—ranging from advanced SEO and targeted PPC campaigns
-            to social media management, email marketing, logo creation, and copywriting—
-            are enhanced by AI tools for predictive analytics and optimization.
+            We operate two specialized business divisions, each built to deliver excellence in its domain while 
+            working in harmony to serve your complete brand journey.
           </p>
 
           <p>
@@ -42,6 +39,33 @@ export default function About() {
         {/* RIGHT */}
         <div className="about-image">
           <img src={aboutImg} alt="about" />
+        </div>
+
+      </div>
+
+      {/* 🔥 CARD 2 (DUPLICATE) */}
+      <div className="about-container glass">
+
+        {/* LEFT */}
+        <div className="about-text">
+          <h2>Why Choose Vincio</h2>
+
+          <p>
+            Access top-tier specialists in both<span className="highlight"> Digital Marketing and Event Management</span> — one partner, two powerhouse divisions.
+          </p>
+
+          <p>
+           Every project — digital or live — is treated with a high-end production lens, ensuring premium quality at every touchpoint.
+          </p>
+
+          <p>
+           Your offline events reflect the same excellence as your online presence. We ensure a seamless, unified brand story across all channels.
+          </p>
+        </div>
+
+        {/* RIGHT */}
+        <div className="about-image">
+          <img src={aboutImg1} alt="about" />
         </div>
 
       </div>

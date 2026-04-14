@@ -1,5 +1,5 @@
-import heroImg from "../assets/hero1.png";
-import logo from "../assets/logo3.png";
+import heroImg from "../assets/hero-new.png";
+import logo from "../assets/logo-new1.png";
 
 export default function Hero() {
   return (
@@ -13,17 +13,18 @@ export default function Hero() {
         {/* LEFT */}
         <div className="hero-left">
 
-          <h1>Vincio Marketing</h1>
+          <h1 className="hero-title">Vincio Media House</h1>
 
           <h2>
-            Connecting Through <span>Digi-Stories</span>
+            Building Brands to<span>Creating Moments</span>
           </h2>
 
           <p>
-           At Vincio Marketing, our passionate team delivers comprehensive digital marketing services 
-    to help businesses achieve their online goals. We craft targeted strategies to connect your
-    brand with your audience, ensuring impactful results.
-    Share your stories with the world and connect digitally in a meaningful way.
+          Vincio Media House is a multi-disciplinary agency where high-level digital strategy meets professional
+           event execution — all under one roof.
+
+         
+            Share your stories with the world and connect digitally in a meaningful way.
           </p>
 
           {/* 🔥 SCROLL ARROW */}

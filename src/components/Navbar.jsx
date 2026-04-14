@@ -4,9 +4,24 @@ import { useRef, useState, useEffect } from "react";
 export default function Navbar() {
   const linksRef = useRef([]);
   const navRef = useRef();
+  const dropdownRef = useRef();
 
   const [show, setShow] = useState(true);
+  const [dropdown, setDropdown] = useState(false);
+
   let lastScroll = 0;
+
+  /* 🔥 CLOSE DROPDOWN ON OUTSIDE CLICK */
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdown(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
   /* 🔥 SCROLL HIDE */
   useEffect(() => {
@@ -41,7 +56,7 @@ export default function Navbar() {
     linksRef.current[i].style.transform = "translate(0,0)";
   };
 
-  /* 🔥 WHOLE NAVBAR MAGNETIC */
+  /* 🔥 NAVBAR MAGNETIC */
   const handleNavMove = (e) => {
     const rect = navRef.current.getBoundingClientRect();
 
@@ -63,30 +78,68 @@ export default function Navbar() {
       onMouseMove={handleNavMove}
       onMouseLeave={resetNav}
     >
-
-      {/* 🔥 LOGO */}
+      {/* LOGO */}
       <NavLink to="/" className="logo">
         Vincio
       </NavLink>
 
-      {/* 🔥 LINKS */}
+      {/* LINKS */}
       <div className="nav-links">
-        {["Home", "About", "Services", "Contact"].map((item, i) => (
-          <NavLink
-            key={i}
-            to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-            className={({ isActive }) =>
-              isActive ? "nav-item active" : "nav-item"
-            }
-            ref={(el) => (linksRef.current[i] = el)}
-            onMouseMove={(e) => handleMove(e, i)}
-            onMouseLeave={() => reset(i)}
-          >
-            {item}
-          </NavLink>
-        ))}
-      </div>
 
+        {/* HOME */}
+        <NavLink
+          to="/"
+          className="nav-item"
+          ref={(el) => (linksRef.current[0] = el)}
+          onMouseMove={(e) => handleMove(e, 0)}
+          onMouseLeave={() => reset(0)}
+        >
+          Home
+        </NavLink>
+
+        {/* ABOUT */}
+        <NavLink
+          to="/about"
+          className="nav-item"
+          ref={(el) => (linksRef.current[1] = el)}
+          onMouseMove={(e) => handleMove(e, 1)}
+          onMouseLeave={() => reset(1)}
+        >
+          About Us
+        </NavLink>
+
+        {/* 🔥 SERVICES DROPDOWN (FIXED) */}
+        <div className="dropdown" ref={dropdownRef}>
+          <span
+            className="nav-item"
+            onClick={(e) => {
+              e.stopPropagation();
+              setDropdown((prev) => !prev);
+            }}
+          >
+            Services ▾
+          </span>
+
+          {dropdown && (
+            <div className="dropdown-menu">
+              <NavLink to="/services?type=digital">Digital Marketing</NavLink>
+              <NavLink to="/services?type=event">Event Management</NavLink>
+            </div>
+          )}
+        </div>
+
+        {/* CONTACT */}
+        <NavLink
+          to="/contact"
+          className="nav-item"
+          ref={(el) => (linksRef.current[3] = el)}
+          onMouseMove={(e) => handleMove(e, 3)}
+          onMouseLeave={() => reset(3)}
+        >
+          Contact Us
+        </NavLink>
+
+      </div>
     </nav>
   );
 }

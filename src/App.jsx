@@ -5,6 +5,7 @@ import Lenis from "lenis";
 import Navbar from "./components/Navbar";
 import Cursor from "./components/Cursor";
 import Background from "./components/Background";
+import SmokeCursor from "./components/Cursor";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -41,7 +42,8 @@ function AppContent() {
 
   return (
     <>
-      <Cursor />
+
+      <SmokeCursor />
       <Navbar />
 
       <ScrollToTop />
