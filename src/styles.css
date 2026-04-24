@@ -1206,7 +1206,7 @@ body, html, #root {
     height: auto;
     display: block;
     margin: 0 auto;
-    transform: translateY(-10px);
+    transform: translateY(-60px);
   }
 
   .hero-logo {
