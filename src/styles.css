@@ -1198,6 +1198,8 @@ body, html, #root {
     align-items: flex-start;
     margin-top: 0 !important;
     order: 2;
+    position: static !important;
+    transform: none !important;
   }
 
   .hero-right img {
@@ -1206,7 +1208,9 @@ body, html, #root {
     height: auto;
     display: block;
     margin: 0 auto;
-    transform: translateY(-60px);
+    transform: none !important;
+    position: relative !important;
+    top: -40px !important;
   }
 
   .hero-logo {
