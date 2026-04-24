@@ -1161,6 +1161,7 @@ body, html, #root {
     flex-direction: column !important;
     align-items: center !important;
     gap: 15px !important;
+    transform-style: flat !important;
   }
 
   .hero-left {
@@ -1202,16 +1203,16 @@ body, html, #root {
     transform: none !important;
   }
 
-  .hero-right img {
-    width: 65% !important;        
-    max-width: 200px !important;  
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    transform: none !important;
-    position: relative !important;
-    top: -40px !important;
-  }
+ .hero-right img {
+  width: 65% !important;
+  max-width: 200px !important;
+  height: auto;
+
+  display: block;
+  margin: 0 auto;
+
+  transform: none !important;  
+}
 
   .hero-logo {
     position: static;
