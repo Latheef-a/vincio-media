@@ -1,5 +1,6 @@
 import aboutImg from "../assets/about.jpg"; 
 import aboutImg1 from "../assets/about2.avif";
+import aboutImg2 from "../assets/about3.avif";
 
 export default function About() {
   return (
@@ -43,7 +44,7 @@ export default function About() {
 
       </div>
 
-      {/* 🔥 CARD 2 (DUPLICATE) */}
+      {/*  CARD 2  */}
       <div className="about-container glass">
 
         {/* LEFT */}
@@ -66,6 +67,30 @@ export default function About() {
         {/* RIGHT */}
         <div className="about-image">
           <img src={aboutImg1} alt="about" />
+        </div>
+
+      </div>
+
+       {/*  CARD 3  */}
+      <div className="about-container glass">
+
+        {/* LEFT */}
+        <div className="about-text">
+          <h2>Why Clients Trust Us</h2>
+
+          <p>
+           When you partner with Vincio for events, you're not just hiring a vendor — you're gaining a<span className="highlight"> full-service execution partner.</span>
+          </p>
+
+          <p>
+           We take ownership of nearly the entire event scope so you can show up, host your guests, and be fully present for every moment.
+          </p>
+          
+        </div>
+
+        {/* RIGHT */}
+        <div className="about-image">
+          <img src={aboutImg2} alt="about" />
         </div>
 
       </div>

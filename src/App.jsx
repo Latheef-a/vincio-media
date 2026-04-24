@@ -4,15 +4,15 @@ import Lenis from "lenis";
 
 import Navbar from "./components/Navbar";
 import Cursor from "./components/Cursor";
-import Background from "./components/Background";
 import SmokeCursor from "./components/Cursor";
+import MeshBackground from "./components/MeshBackground";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 
-/* 🔥 SCROLL TO TOP COMPONENT */
+/*  SCROLL TO TOP COMPONENT */
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -23,7 +23,7 @@ function ScrollToTop() {
   return null;
 }
 
-/* 🔥 MAIN APP */
+/*  MAIN APP */
 function AppContent() {
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function AppContent() {
 
   return (
     <>
-
+      <MeshBackground />
       <SmokeCursor />
       <Navbar />
 
@@ -58,7 +58,7 @@ function AppContent() {
   );
 }
 
-/* 🔥 ROOT */
+/*  ROOT */
 export default function App() {
   return (
     <BrowserRouter>

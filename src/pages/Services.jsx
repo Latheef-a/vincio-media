@@ -9,6 +9,16 @@ export default function Services() {
   const query = new URLSearchParams(useLocation().search);
   const type = query.get("type");
 
+  const handleMove = (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  e.currentTarget.style.setProperty("--x", `${x}px`);
+  e.currentTarget.style.setProperty("--y", `${y}px`);
+};
+
   return (
     <section className="services-section">
 
@@ -22,37 +32,37 @@ export default function Services() {
 
          <div className="services-grid">
 
-  <div className="service-item">
+  <div className="service-item" onMouseMove={handleMove}>
     <div className="icon">🔍</div>
     <h3>SEO</h3>
     <p>Strategic keyword authority and content domination that drives organic growth.</p>
   </div>
 
-  <div className="service-item">
+  <div className="service-item" onMouseMove={handleMove}>
     <div className="icon">🎯</div>
     <h3>PPC & Paid Ads</h3>
     <p>Precision targeting across platforms for maximum return on investment.</p>
   </div>
 
-  <div className="service-item">
+  <div className="service-item" onMouseMove={handleMove}>
     <div className="icon">📢</div>
     <h3>Social Media</h3>
     <p>Cultivating brand voice and deep community engagement at scale.</p>
   </div>
 
-  <div className="service-item">
+  <div className="service-item" onMouseMove={handleMove}>
     <div className="icon">🌐</div>
     <h3>Web Design</h3>
     <p>High-conversion, responsive digital headquarters built for your audience.</p>
   </div>
 
-  <div className="service-item">
+  <div className="service-item" onMouseMove={handleMove}>
     <div className="icon">🎬</div>
     <h3>Video Marketing</h3>
     <p>Cinematic brand stories and scroll-stopping social content.</p>
   </div>
 
-  <div className="service-item">
+  <div className="service-item" onMouseMove={handleMove}>
     <div className="icon">🎨</div>
     <h3>Branding</h3>
     <p>Crafting unique visual and verbal DNA that sets you apart.</p>

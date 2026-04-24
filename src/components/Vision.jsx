@@ -7,29 +7,24 @@ export default function Vision() {
         <div className="vmv-card">
           <h3>Vision</h3>
           <p>
-            Our vision at Vincio Marketing is to become a leading digital marketing agency,
-             empowering businesses of all sizes to excel online. We aim to grow our team of 
-             innovative professionals, fostering collaboration and excellence while delivering 
-             cutting-edge solutions and exceptional client value.
+            Our vision at Vincio Media House is to become a leading creative and media agency, 
+            empowering businesses and individuals to excel both digitally and through unforgettable
+             experiences. We aim to grow our team of innovative professionals, fostering collaboration and excellence while delivering cutting-edge digital solutions and world-class event executions that create lasting impact and exceptional value.
           </p>
         </div>
 
         <div className="vmv-card">
           <h3>Mission</h3>
           <p>
-            Our mission is to deliver innovative, results-driven digital marketing solutions
-            that elevate brands and drive measurable growth. We provide tailored, high-quality
-             services with precision, creativity, and transparency to meet each client’s unique goals.
+            Our mission is to deliver innovative, results-driven digital and event solutions that elevate brands and 
+            create meaningful experiences. We provide tailored, high-quality services with precision, creativity, and transparency, ensuring every digital campaign and event execution aligns perfectly with each client’s unique goals and drives measurable growth and engagement.
           </p>
         </div>
 
         <div className="vmv-card">
           <h3>Values</h3>
           <p>
-            At Vincio Marketing, we prioritize quality, ensuring every project surpasses expectations with
-            exceptional results. Our client-centric approach tailors innovative, creative solutions to meet 
-            your unique business goals. We consistently push boundaries to deliver fresh, impactful digital marketing 
-            strategies. Trust us to elevate your brand with excellence and precision.
+            At Vincio Media House, we prioritize quality, ensuring every project—whether digital or event-based—surpasses expectations with exceptional results. Our client-centric approach delivers innovative, creative solutions tailored to your vision. We continuously push boundaries to craft impactful strategies and memorable experiences, building trust through excellence, precision, and consistent performance.
           </p>
         </div>
 

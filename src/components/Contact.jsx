@@ -41,6 +41,7 @@ export default function Contact() {
             <p>📍 St. Anthony Road, Kalyan Nagar, Bangalore - 560043</p>
             <p>📧 contact@vinciomarketing.com</p>
             <p>📞 +91 8050074508</p>
+            <p>GSTIN- 29AAMCV0230A1ZP</p>
           </div>
 
           <div className="working-hours">

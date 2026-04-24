@@ -2,16 +2,36 @@ import heroImg from "../assets/hero-new.png";
 import logo from "../assets/logo-new1.png";
 
 export default function Hero() {
+  const handleMove = (e) => {
+  const card = e.currentTarget;
+  const rect = card.getBoundingClientRect();
+
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const rotateX = -(y - rect.height / 2) / 25;
+  const rotateY = (x - rect.width / 2) / 25;
+
+  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+};
+
+const resetTilt = (e) => {
+  e.currentTarget.style.transform = "rotateX(0deg) rotateY(0deg)";
+};
   return (
     <section className="hero-wrapper">
 
-      <div className="hero-card">
+      <div
+  className="hero-card"
+  onMouseMove={handleMove}
+  onMouseLeave={resetTilt}
+>
 
         {/* LOGO */}
         <img src={logo} alt="logo" className="hero-logo" />
 
         {/* LEFT */}
-        <div className="hero-left">
+        <div className="hero-left depth">
 
           <h1 className="hero-title">Vincio Media House</h1>
 
@@ -42,7 +62,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT */}
-        <div className="hero-right">
+        <div className="hero-right depth">
           <img src={heroImg} alt="hero" />
         </div>
 
