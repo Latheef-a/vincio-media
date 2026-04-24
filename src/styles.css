@@ -1178,6 +1178,7 @@ body, html, #root {
   .hero-left h2 {
     font-size: 18px;
     line-height: 1.5;
+    margin-bottom: 20px;
   }
 
   .hero-left h2 span {
@@ -1190,8 +1191,11 @@ body, html, #root {
   }
 
   .hero-right img {
-    width: 180px;
-    max-width: 300px;
+    width: 85%;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
   }
 
   .hero-logo {
@@ -1323,4 +1327,22 @@ body, html, #root {
     height: auto;
   }
 
+  .vmv-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .vmv-card {
+    width: 100% !important;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .vmv-card p{
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: normal;
+  }
 }
