@@ -1,39 +1,40 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const linksRef = useRef([]);
   const navRef = useRef();
   const dropdownRef = useRef();
+
   const location = useLocation();
 
   const [show, setShow] = useState(true);
   const [dropdown, setDropdown] = useState(false);
-  
 
   let lastScroll = 0;
 
-  /*  CLOSE DROPDOWN ON OUTSIDE CLICK */
+  /* ✅ CLOSE DROPDOWN ON OUTSIDE CLICK */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setDropdown(false);
       }
     };
-    useEffect(() => {
-  if (location.pathname === "/services") {
-    setDropdown(true); //  keep open
-  } else {
-    setDropdown(false); // close when leaving
-  }
-}, [location]);
 
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
-  /*  SCROLL HIDE */
+  /* ✅ KEEP DROPDOWN OPEN ON SERVICES PAGE */
+  useEffect(() => {
+    if (location.pathname === "/services") {
+      setDropdown(true);
+    } else {
+      setDropdown(false);
+    }
+  }, [location]);
+
+  /* ✅ SCROLL HIDE NAVBAR */
   useEffect(() => {
     const handleScroll = () => {
       const current = window.scrollY;
@@ -51,7 +52,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /*  MAGNETIC LINKS */
+  /* ✅ MAGNETIC LINKS */
   const handleMove = (e, i) => {
     const rect = linksRef.current[i].getBoundingClientRect();
 
@@ -66,7 +67,7 @@ export default function Navbar() {
     linksRef.current[i].style.transform = "translate(0,0)";
   };
 
-  /*  NAVBAR MAGNETIC */
+  /* ✅ NAVBAR MAGNETIC */
   const handleNavMove = (e) => {
     const rect = navRef.current.getBoundingClientRect();
 
@@ -118,39 +119,37 @@ export default function Navbar() {
           About Us
         </NavLink>
 
+        {/* SERVICES DROPDOWN */}
         <div className="dropdown" ref={dropdownRef}>
-  
-  {/* SERVICES BUTTON */}
-  <span
-    className="nav-item"
-    onClick={() => setDropdown((prev) => !prev)}
-  >
-    Services ▾
-  </span>
+          <span
+            className="nav-item"
+            onClick={() => setDropdown((prev) => !prev)}
+          >
+            Services ▾
+          </span>
 
-  {/* DROPDOWN */}
-  {dropdown && (
-    <div className="dropdown-menu">
-      <NavLink
-        to="/services?type=digital"
-        className={`dropdown-item ${
-          location.search.includes("digital") ? "active" : ""
-        }`}
-      >
-        Digital Marketing
-      </NavLink>
+          {dropdown && (
+            <div className="dropdown-menu">
+              <NavLink
+                to="/services?type=digital"
+                className={`dropdown-item ${
+                  location.search.includes("digital") ? "active" : ""
+                }`}
+              >
+                Digital Marketing
+              </NavLink>
 
-      <NavLink
-        to="/services?type=event"
-        className={`dropdown-item ${
-          location.search.includes("event") ? "active" : ""
-        }`}
-      >
-        Event Management
-      </NavLink>
-    </div>
-  )}
-</div>
+              <NavLink
+                to="/services?type=event"
+                className={`dropdown-item ${
+                  location.search.includes("event") ? "active" : ""
+                }`}
+              >
+                Event Management
+              </NavLink>
+            </div>
+          )}
+        </div>
 
         {/* CONTACT */}
         <NavLink
