@@ -41,13 +41,17 @@ const resetTilt = (e) => {
 
           <p>
           Vincio Media House is a multi-disciplinary agency where high-level digital strategy meets professional
-           event execution — all under one roof.
+           event execution — all under one roof.</p>
 
-         
+          <p>
             Share your stories with the world and connect digitally in a meaningful way.
           </p>
 
-          {/* 🔥 SCROLL ARROW */}
+           <div className="mobile-only">
+            <img src={heroImg} alt="hero" />
+           </div>
+
+          {/*  SCROLL ARROW */}
           <div
             className="scroll-down"
             onClick={() =>
@@ -62,7 +66,7 @@ const resetTilt = (e) => {
         </div>
 
         {/* RIGHT */}
-        <div className="hero-right depth">
+        <div className="hero-right depth desktop-only">
           <img src={heroImg} alt="hero" />
         </div>
 
