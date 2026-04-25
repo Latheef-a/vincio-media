@@ -13,7 +13,7 @@ export default function Navbar() {
 
   let lastScroll = 0;
 
-  /* ✅ CLOSE DROPDOWN ON OUTSIDE CLICK */
+  /*  CLOSE DROPDOWN ON OUTSIDE CLICK */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -25,7 +25,7 @@ export default function Navbar() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
-  /* ✅ KEEP DROPDOWN OPEN ON SERVICES PAGE */
+  /*  KEEP DROPDOWN OPEN ON SERVICES PAGE */
   useEffect(() => {
     if (location.pathname === "/services") {
       setDropdown(true);
@@ -34,7 +34,7 @@ export default function Navbar() {
     }
   }, [location]);
 
-  /* ✅ SCROLL HIDE NAVBAR */
+  /*  SCROLL HIDE NAVBAR */
   useEffect(() => {
     const handleScroll = () => {
       const current = window.scrollY;
@@ -52,7 +52,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ✅ MAGNETIC LINKS */
+  /*  MAGNETIC LINKS */
   const handleMove = (e, i) => {
     const rect = linksRef.current[i].getBoundingClientRect();
 
@@ -67,7 +67,7 @@ export default function Navbar() {
     linksRef.current[i].style.transform = "translate(0,0)";
   };
 
-  /* ✅ NAVBAR MAGNETIC */
+  /*  NAVBAR MAGNETIC */
   const handleNavMove = (e) => {
     const rect = navRef.current.getBoundingClientRect();
 

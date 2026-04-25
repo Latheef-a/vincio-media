@@ -49,7 +49,6 @@ export default function Contact() {
             <ul>
               <li>Monday - Saturday</li>
               <li>10:00 AM - 05:00 PM</li>
-              <li>2nd & 4th Saturday Holiday</li>
             </ul>
           </div>
 

@@ -49,7 +49,6 @@ export default function Contact() {
             <ul>
               <li>Monday - Saturday</li>
               <li>10:00 AM - 05:00 PM</li>
-              <li>2nd & 4th Saturday Holiday</li>
             </ul>
           </div>
 
@@ -67,7 +66,7 @@ export default function Contact() {
         {/* RIGHT SIDE */}
         <div className="contact-right">
 
-          {/* 🔥 FORM CONNECTED */}
+          {/*  FORM CONNECTED */}
           <form ref={form} onSubmit={sendEmail} className="contact-form">
 
             <input
