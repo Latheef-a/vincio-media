@@ -1162,6 +1162,7 @@ body, html, #root {
     align-items: center !important;
     gap: 15px !important;
     transform-style: flat !important;
+    padding: 60px 20px 30px !important;
   }
 
   .hero-left {
